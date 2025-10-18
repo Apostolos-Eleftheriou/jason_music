@@ -23,7 +23,7 @@ body::-webkit-scrollbar-track {
 
 
 .wrapper {
-    background: url('/images/stars.jpg') no-repeat center center;
+    background: url('images/stars.jpg') no-repeat center center;
     background-size: cover;
     backdrop-filter: blur(3px);
     height: 100vh;
