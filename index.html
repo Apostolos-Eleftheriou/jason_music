@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 
@@ -21,17 +21,17 @@
                             fill="#64eefe" />
                     </svg>
                 </div>
-                <audio controls src="/music/elefantaki.mp3"></audio>
+                <audio controls src="music/elefantaki.mp3"></audio>
             </figure>
         </div>
     </div>
 </body>
 <script>
     const playlist = [
-        { title: 'Ελεφαντάκι', src: '/music/elefantaki.mp3', img: '/images/elefantaki.png' },
-        { title: 'Βουνό', src: '/music/vouno.mp3', img: '/images/vouno.png' },
-        { title: 'Παγωτατζής', src: '/music/pagotatzis.mp3', img: '/images/pagotatzis.png' },
-        { title: 'Pretty Little baby', src: '/music/pretty.mp3', img: '/images/pretty.png' }
+        { title: 'Ελεφαντάκι', src: 'music/elefantaki.mp3', img: 'images/elefantaki.png' },
+        { title: 'Βουνό', src: 'music/vouno.mp3', img: 'images/vouno.png' },
+        { title: 'Παγωτατζής', src: 'music/pagotatzis.mp3', img: 'images/pagotatzis.png' },
+        { title: 'Pretty Little baby', src: 'music/pretty.mp3', img: 'images/pretty.png' }
     ];
 
     playlist.forEach(music => {
@@ -85,5 +85,3 @@
         playButtons.forEach(btn => btn.textContent = 'Play');
     });
 </script>
-
-</html>
