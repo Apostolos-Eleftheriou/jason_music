@@ -20,7 +20,7 @@ body {
 .header_title {
     font-size: 24px;
     font-weight: bold;
-    padding: 5px;
+    padding: 8px;
 }
 
 body::-webkit-scrollbar {
@@ -97,7 +97,7 @@ body::-webkit-scrollbar-track {
     width: 100%;
     justify-content: center;
     margin-bottom: 175px;
-    margin-top: 50px;
+    margin-top: 55px;
 }
 
 .music_card {
