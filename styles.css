@@ -69,7 +69,8 @@ body::-webkit-scrollbar-track {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #835730;
+    /* background: #835730; */
+    background: #200f0163;
     padding: 13px 18px;
     border-radius: 50px;
     width: 265px;
