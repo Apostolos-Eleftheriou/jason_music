@@ -1,10 +1,26 @@
+@font-face {
+    font-family: 'MyFunFont';
+    src: url('fonts/Wimzik.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'MyFunFont', 'Baloo 2', 'Comic Neue', Arial, sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     scrollbar-width: thin;
     scrollbar-color: rgba(100, 238, 254, 0.10) transparent;
     -webkit-overflow-scrolling: touch;
+}
+
+.header_title {
+    font-size: 24px;
+    font-weight: bold;
+    padding: 5px;
 }
 
 body::-webkit-scrollbar {
@@ -48,28 +64,30 @@ body::-webkit-scrollbar-track {
 .audio_info {
     margin-bottom: 13px;
     font-size: 14px;
-    color: #5E412F;
+    color: #ffcca4;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    background: #835730;
+    padding: 13px 18px;
+    border-radius: 50px;
+    width: 265px;
 }
 
 .audio-player {
     position: fixed;
-    bottom: 20px;
+    bottom: 0px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background: linear-gradient(45deg, #703aa0, #239baa); */
     background: transparent;
     backdrop-filter: blur(25px);
-    text-shadow: 0 0 11px #fece8b;
+    text-shadow: 0 0 6px #1c1c1b;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0px 7px 11px 1px #3f3f3f80
+    box-shadow: 0px 7px 11px 1px #3f3f3f80;
 }
 
 .music_cards {
@@ -78,7 +96,7 @@ body::-webkit-scrollbar-track {
     width: 100%;
     justify-content: center;
     margin-bottom: 175px;
-    margin-top: 90px;
+    margin-top: 50px;
 }
 
 .music_card {
@@ -141,4 +159,8 @@ header {
     background: #a97142ba;
     border-radius: 0 0 12px 12px;
     backdrop-filter: blur(13px);
+}
+
+audio {
+    filter: invert(1) sepia(1) hue-rotate(328deg) opacity(0.45);
 }
