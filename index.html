@@ -11,6 +11,9 @@
 <body>
     <div class="wrapper">
         <div class="content">
+            <header>
+                <h1>Jason's Music Player</h1>
+            </header>
             <div class="music_cards"></div>
             <figure class="audio-player">
                 <div class="audio_info">
@@ -18,7 +21,7 @@
                     <svg class="loop_song" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path
                             d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.3-.42 2.5-1.13 3.47l1.46 1.46C19.07 15.07 20 13.13 20 11c0-4.42-3.58-8-8-8zm-6.87 2.13l-1.46 1.46C4.93 8.93 4 10.87 4 13c0 4.42 3.58 8 8 8v3l4-4-4-4v3c-3.31 0-6-2.69-6-6 0-1.3.42-2.5 1.13-3.47z"
-                            fill="#64eefe" />
+                            fill="#5E412F" />
                     </svg>
                 </div>
                 <audio controls src="music/elefantaki.mp3"></audio>
@@ -31,7 +34,7 @@
         { title: 'Ελεφαντάκι', src: 'music/elefantaki.mp3', img: 'images/elefantaki.png' },
         { title: 'Βουνό', src: 'music/vouno.mp3', img: 'images/vouno.png' },
         { title: 'Παγωτατζής', src: 'music/pagotatzis.mp3', img: 'images/pagotatzis.png' },
-        { title: 'Pretty Little baby', src: 'music/pretty.mp3', img: 'images/pretty.png' }
+        { title: 'Pretty Little baby', src: 'music/pretty_little_baby.mp3', img: 'images/pretty.png' }
     ];
 
     playlist.forEach(music => {
