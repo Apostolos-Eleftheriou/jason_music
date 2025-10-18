@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <div class="music_cards"></div>
+            <figure class="audio-player">
+                <div class="audio_info">
+                    <figcaption class="now_playing">Now Playing Ελεφαντακι:</figcaption>
+                    <svg class="loop_song" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path
+                            d="M12 4V1L8 5l4 4V6c3.31 0 6 2.69 6 6 0 1.3-.42 2.5-1.13 3.47l1.46 1.46C19.07 15.07 20 13.13 20 11c0-4.42-3.58-8-8-8zm-6.87 2.13l-1.46 1.46C4.93 8.93 4 10.87 4 13c0 4.42 3.58 8 8 8v3l4-4-4-4v3c-3.31 0-6-2.69-6-6 0-1.3.42-2.5 1.13-3.47z"
+                            fill="#64eefe" />
+                    </svg>
+                </div>
+                <audio controls src="/music/elefantaki.mp3"></audio>
+            </figure>
+        </div>
+    </div>
+</body>
+<script>
+    const playlist = [
+        { title: 'Ελεφαντάκι', src: '/music/elefantaki.mp3', img: '/images/elefantaki.png' },
+        { title: 'Βουνό', src: '/music/vouno.mp3', img: '/images/vouno.png' },
+        { title: 'Παγωτατζής', src: '/music/pagotatzis.mp3', img: '/images/pagotatzis.png' },
+        { title: 'Pretty Little baby', src: '/music/pretty.mp3', img: '/images/pretty.png' }
+    ];
+
+    playlist.forEach(music => {
+        let template = `<div class="music_card">
+                    <img src="${music.img}" alt="${music.title} Album Cover">
+                    <h3>${music.title}</h3>
+                    <button class="play_button" type="button" data-music="${music.src}" data-title="${music.title}">Play</button>
+                </div>`
+        document.querySelector('.music_cards').innerHTML += template;
+    });
+
+    const playButtons = document.querySelectorAll('.play_button');
+    const audioPlayer = document.querySelector('.audio-player audio');
+    playButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const musicSrc = button.getAttribute('data-music');
+            const nowPlaying = document.querySelector('.now_playing');
+
+            // If the same track is playing
+            if (audioPlayer.getAttribute('src') === musicSrc) {
+                if (!audioPlayer.paused) {
+                    audioPlayer.pause();
+                    button.textContent = 'Play';
+                    nowPlaying.textContent = `Paused: ${button.getAttribute('data-title')}`;
+                } else {
+                    audioPlayer.play();
+                    button.textContent = 'Playing';
+                    nowPlaying.textContent = `Now Playing: ${button.getAttribute('data-title')}`;
+                }
+                return;
+            }
+
+            // Set all buttons to "Play"
+            playButtons.forEach(btn => btn.textContent = 'Play');
+
+            // Play the selected track from the start
+            nowPlaying.textContent = `Now Playing: ${button.getAttribute('data-title')}`;
+            audioPlayer.setAttribute('src', musicSrc);
+            audioPlayer.play();
+            button.textContent = 'Playing';
+        });
+    });
+    const loopButton = document.querySelector('.loop_song');
+    loopButton.addEventListener('click', () => {
+        audioPlayer.loop = !audioPlayer.loop;
+        loopButton.classList.toggle('active', audioPlayer.loop);
+    });
+
+    // Optional: When audio ends, reset button text
+    audioPlayer.addEventListener('ended', () => {
+        playButtons.forEach(btn => btn.textContent = 'Play');
+    });
+</script>
+
+</html>

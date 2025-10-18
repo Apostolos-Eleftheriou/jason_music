@@ -1,0 +1,129 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 238, 254, 0.10) transparent;
+    -webkit-overflow-scrolling: touch;
+}
+
+body::-webkit-scrollbar {
+    width: 4px;
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgba(100, 238, 254, 0.10);
+    border-radius: 2px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.wrapper {
+    background: url('/images/stars.jpg') no-repeat center center;
+    background-size: cover;
+    backdrop-filter: blur(3px);
+    height: 100vh;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.audio_info {
+    margin-bottom: 13px;
+    font-size: 14px;
+    color: #64eefe;
+    font-weight: bold;
+}
+
+.audio-player {
+    /* position: absolute;
+    bottom: 20px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: linear-gradient(45deg, #703aa0, #239baa); */
+    background: transparent;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 7px 11px 1px #3f3f3f80
+}
+
+.music_cards {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+.music_card {
+    max-width: 250px;
+    max-height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: transparent;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border-radius: 12px;
+    border: solid 2px #7979b3;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    margin: 10px;
+}
+
+.music_card img {
+    width: 100%;
+    border-radius: 12px;
+    min-height: 165px;
+    object-fit: cover;
+}
+
+.play_button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    background: #2d2d2d;
+    color: white;
+    cursor: pointer;
+}
+
+.audio_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.loop_song {
+
+    cursor: pointer;
+    font-size: 12px;
+    color: #64eefe;
+}
+
+.loop_song {
+    cursor: pointer;
+    transition: filter 0.2s;
+}
+
+.loop_song.active path {
+    fill: #ffb347;
+    /* highlight color when looping */
+}
